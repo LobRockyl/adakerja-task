@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("../partials/headLinks") %>
+  
+    <title>Messenger Bot</title>
+
+    <meta name="keywords" content="Messages, Bot, Messenger, Facebook">
+    <meta name="description" content="Page for conversation with a Messenger Bot">
+
+</head>
+<body>
+
+  <header>
+    <%- include ("../partials/header") %>
+  </header>
+
+<h1> Messenger bot </h1>
+
+<p> Welcome to the Bot Messenger app! Bot is very friendly and wants to know you better! Start the conversation by typing a greeting message 🖐</p>
+
+<h2>Rules for conversation: </h2>
+<ul>
+  <li> Greeting: "hi", "hey", "hello"</li>
+  <li> Accepting: "yup", "yes", "yeah", "sure", "yep", "i do"</li>
+  <li> Denying: "no", "nah", "nope", "not now", "maybe later"</li>
+  <li> Gratitude: "thanks", "thx", "thank you", "thank you very much", "thanks a lot", "thanks!", "thank you!" </li>
+</ul>
+
+<h2> Maintaining the conversation </h2>
+<p> Bot is still very early on his learning phase, so you should try to correctly answer the questions and choosing answers from given cards, although you can manually type messages.</p>
+
+<button> <a href="https://github.com/JusticeBringer/Node.js-Messenger-Bot/blob/master/readme.md#demo-conversation" target="_blank"> See demo conversation </a> </button>
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v8.0'
+    });
+  };
+
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="101149528396924"
+    theme_color="#0084ff"
+    logged_in_greeting="Hi! Would you like to answer a few questions about yourself?"
+    logged_out_greeting="Hi! Would you like to answer a few questions about yourself?">
+</div>
+
+</body>
+</html>
